@@ -1,0 +1,119 @@
+int menu_admin(){
+	do{
+		system("cls");
+		printf("========Menu Admin========\n");
+		printf("Welcome Admin \n");
+		printf("1. Kelola Akun\n");
+		printf("2. Kelola Kota\n");
+		printf("3. Kelola Rute\n");
+		printf("4. Lihat Pemasukan\n");
+		printf("5. Lihat Jadwal Kereta Api\n");
+		printf("6. Logout\n");
+		printf("Pilihan Anda : ");
+		scanf("%d",&pilih4);
+		if(pilih4>6){
+			system("cls");
+            printf("INPUT SALAH, COBA LAGI!!\n");
+		}switch(pilih4){
+			case 1:
+				system("cls");
+				printf("Halaman Kelola Akun\n");
+				printf("\n===========================\n\n");
+				int i, j, found=0;
+			    dataUser user1;
+			    char ktp[100];
+			    fflush(stdin);
+			    printf("Masukkan Nomor KTP : ");
+			    scanf("%[^\n]s",ktp);
+			
+			    pf = fopen("dataUser.txt","r");
+			    pf1 = fopen("temp.txt","w");
+			    while(fread(&user1,sizeof(dataUser),1,pf)){
+			        if(strcmp(user1.ktp,ktp)==0){
+			            found = 1;
+			            printf("--Data Customer--");
+			            printf("\nNama Lengkap : %s",user1.nama);
+			   			printf("\nNomor Handphone : %s",user1.hp);
+			   			printf("\nEmail : %s",user1.email);
+			   			printf("\nPassword : %s",user1.password);  
+			   			
+			   			printf("\n\n--Ubah Data Customer--");
+			            fflush(stdin);
+			        	printf("\nNomor KTP : ");
+				        fflush(stdin);
+				        scanf("%[^\n]s",user1.ktp);
+				        fflush(stdin);
+				        printf("Nama Lengkap : ");
+				        scanf("%[^\n]s",user1.nama);
+				        fflush(stdin);
+				        printf("Nomor Handphone : ");
+				        scanf("%[^\n]s",user1.hp);
+				        fflush(stdin);
+				        printf("Email : ");
+				        scanf("%[^\n]s",user1.email);
+				        fflush(stdin);
+				        printf("Password : ");
+				        scanf("%[^\n]s",user1.password);
+				        fflush(stdin);
+				        printf("Re-Password : ");
+				        scanf("%[^\n]s",user1.repassword);
+			        }
+			        fwrite(&user1,sizeof(dataUser),1,pf1);
+			    }
+			    fclose(pf);
+			    fclose(pf1);
+			
+			
+			    if(found){
+			            pf = fopen("dataUser.txt","w");
+			            pf1 = fopen("temp.txt","r");
+			
+			            while(fread(&user1,sizeof(dataUser),1,pf1)){
+			                fwrite(&user1,sizeof(dataUser),1,pf);
+			                printf("\n\nData Berhasil Diupdate, Berikut Data Terbaru: ");
+			                printf("\nNama Lengkap : %s",user1.nama);
+				   			printf("\nNomor Handphone : %s",user1.hp);
+				   			printf("\nEmail : %s",user1.email);
+				   			printf("\nPassword : %s",user1.password); 
+							   		
+			            }
+			            fclose(pf);
+			            fclose(pf1);
+			    }
+			    			printf("\nGO BACK TO MAIN MENU [y/t] ? ");
+			        		again=getch();
+							break;
+				
+			case 2:
+				system("cls");
+				kelola_kota();
+				break;
+			
+			case 3:
+				system("cls");
+				kelola_rute();
+				break;
+			
+			case 4:
+				system("cls");
+				printf("Lihat Pemasukan\n");
+				printf("\n===========================");
+				
+        		again=getch();
+				break;
+			
+			case 5:
+				system("cls");
+				printf("Lihat Jadwal Kereta Api\n");
+				printf("\n===========================");
+				printf("Menu Utama [y/t] ? ");
+        		again=getch();
+				break;
+			
+			case 6:
+				system("cls");
+				mainMenu();
+				break;	
+		}
+	}while(again == 'y');
+}	
