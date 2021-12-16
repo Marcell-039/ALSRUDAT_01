@@ -1,0 +1,23 @@
+Data Kota 
+(No, Kode Kota, Nama Kota)
+
+1,BDG,Bandung
+2,BKS,Bekasi
+3,BGR,Bogor
+4,CNJ,Cianjur
+5,CRB,Cirebon
+6,GRT,Garut
+7,IDM,Indramayu
+8,PWK,Purwakarta
+9,SKB,Sukabumi
+10,BJR,Banjar
+11,CMH,Cimahi
+12,DPK,Depok
+13,SKB,Sukabumi
+14,TKM,Tasikmalaya
+15,SMG,Sumedang
+16,KNG,Kuningan
+17,MJK,Majalengka
+18,PGD,Pangandaran
+19,JKT,Jakarta
+20,TGR,Tanggerang
