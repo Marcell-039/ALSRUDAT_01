@@ -1,0 +1,30 @@
+int login_user(){
+			system("cls");  
+			 int i, j, found=0;
+    dataUser user1;
+    dataUser *s;
+    char email[100];
+    char password[100];
+			printf("======================\n");
+			printf("LOGIN\n");
+			printf("======================\n");
+			fflush(stdin);
+			printf("Username : ");
+    		scanf("%[^\n]s",email);
+    		fflush(stdin);
+    		printf("Password : ");
+    		scanf("%[^\n]s",password);
+
+    pf = fopen("dataUser.txt","r");
+    while(fread(&user1,sizeof(dataUser),1,pf)){
+        if(strcmp(user1.email,email)==0){
+            if (strcmp(user1.password,password)==0) {	
+       			userMenu();
+				found = 1;
+				fclose(pf);
+			}else if(!found){
+				login_user();
+			}
+        }
+	}
+}
