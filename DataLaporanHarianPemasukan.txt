@@ -1,0 +1,8 @@
+Data Laporan Pemasukan Berdasarakan Tiket yang dibeli Penumpang
+(No, Tanggal, KAI, Jumlah Pendapatan)
+
+1,01-11-2021,KAI 01,3.500.000
+2,01-11-2021,KAI 02,3.200.000
+3,01-11-2021,KAI 03,3.000.000
+4,01-11-2021,KAI 04,2.800.000
+5,01-11-2021,KAI 05,2.700.000
