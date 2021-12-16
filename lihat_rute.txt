@@ -1,0 +1,20 @@
+int lihat_rute(){
+	rute *r;
+	rute r1;
+	kota k1;
+    FILE *prute,*prute1;
+    int n,i,j, found =0;
+	int counter4=1;
+    prute = fopen("rute.txt","r");
+	system("cls");
+	printf("\n\n#LIHAT DATA RUTE#");
+	printf("\nData Lengkap Rute Kereta Api");
+	printf("\n-------------------------------------------------------------------\n");
+	printf("No\t\tKeberangkatan\tTujuan\t\tKode_Rute\t\tBisnis\t\tPremium\n");
+	while(fread(&r1,sizeof(rute),1,prute)) { 
+		printf("%d\t\t%s\t\t%s\t\t%s-%s\t\t\t%d\t\t\%d\n",counter4,r1.keberangkatan,r1.tujuan,r1.kode1,r1.kode2,r1.bisnis,r1.premium);
+		counter4++;
+    }
+	printf("\n\n-------------------------------------------------------------------");
+    fclose(prute);
+}
