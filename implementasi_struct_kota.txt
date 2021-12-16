@@ -1,0 +1,4 @@
+typedef struct kota {
+	char kode[100];
+	char namaKota[100];
+} kota;
