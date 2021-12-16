@@ -1,0 +1,8 @@
+Data Laporan Pemasukan Tahunan
+(No, Bulan, Jumlah Pendapatan)
+
+1, 01, 172.500.000
+2, 02, 160.000.000
+3, 03, 160.000.000
+4, 04, 172.500.000
+5, 05, 160.000.000
