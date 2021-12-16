@@ -1,0 +1,18 @@
+typedef struct dataUser{
+    int rno; 
+    char name[20]; 
+    struct subject{
+        int scode;
+        char name[20]; 
+        int mark;
+    }sub[3]; 
+    int total;
+    float per;
+    
+    char ktp[16];
+    char nama[100];
+    char hp[16];
+    char email[100];
+    char password[100];
+    char repassword[100];
+} dataUser;
