@@ -1,0 +1,12 @@
+int pilih1, pilih2, pilih3,pilih4,pilih5,pilih6;
+int userbenar,passbenar;
+FILE *pf, *pf1;
+int i=1;
+char hp[12];
+char email[30];
+char pass[20];
+char repass[20];
+char namaLengkap[20];
+char kar,again = 'y';	
+char user[20],passw[20];
+char emailAdmin[20], passAdmin[30];
