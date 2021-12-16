@@ -1,0 +1,10 @@
+typedef struct rute {
+	char keberangkatan[100];
+	char tujuan[100];
+	char kode[100];
+	char kode1[100];
+	char kode2[100];
+	char kode4[100];
+	int bisnis;
+	int premium;
+}rute;
