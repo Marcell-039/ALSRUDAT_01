@@ -1,0 +1,140 @@
+int kelola_rute(){
+	do{
+	system("cls");
+	printf("========KELOLA KOTA========\n");
+	printf("1. Tambah Data Rute\n");
+	printf("2. Lihat Data Rute\n");
+	printf("3. Edit Data Rute\n");
+	printf("4. Delete Data Rute\n");
+	printf("5. Menu Utama\n");
+	printf("\nPilihan : ");
+	scanf("%d",&pilih6);
+	if(pilih6>5){
+		system("cls");
+            printf("INPUT SALAH, COBA LAGI!!\n");
+	}switch(pilih6){
+		case 1:
+		system("cls");
+		rute *r;
+		rute r1;
+		kota k1;
+	    FILE *prute,*prute1;
+	    int n,i,j, found =0;
+	
+	    r = (rute*)malloc(100*sizeof(rute));
+	    prute = fopen("rute.txt","a+");
+	    prute1 = fopen("kota.txt","r");
+	    
+		printf("#TAMBAH DATA RUTE#\n\n");
+		char kode1[100], kode2[100], kode3[100];
+		
+	    	printf("Tambah Data Rute : ");
+	    	fflush(stdin);
+	        scanf("%s %s %d %d",r1.keberangkatan,r1.tujuan,&r1.bisnis,&r1.premium);
+	        while(fread(&k1,sizeof(kota),1,prute1)) {
+	            if(strcmp(r1.keberangkatan,k1.namaKota)==0) {
+	            	strcpy(r1.kode1,k1.kode);
+				} 
+				
+				if (strcmp(r1.tujuan,k1.namaKota)==0) {
+					strcpy(r1.kode2,k1.kode);
+				}
+				strcpy(kode3,strcat(r1.kode1,""));
+				strcpy(r1.kode,(strcat(kode3,r1.kode2)));
+	        }
+	        
+	        fwrite(&r1,sizeof(rute),1,prute);
+	    
+	    
+	    printf("\n-----------------------------------------");
+	    printf("\nData Berhasil Ditambahkan\n");
+	    printf("------------------------------------------");
+	    
+	    fclose(prute);
+	    fclose(prute1);
+	    printf("\nMenu Utama [y/t] ? ");
+		again=getch();
+		break;
+		
+		case 2:
+			system("cls");
+		    lihat_rute();
+		    printf("\nMenu Utama [y/t] ? ");
+			again=getch();
+		break;
+		
+		case 3:
+		system("cls");
+		int counter5 =1;
+			prute = fopen("rute.txt","r");
+			system("cls");
+			lihat_rute();
+			char kodeKota[100];
+			printf("\n\n#EDIT DATA RUTE#");
+			fflush(stdin);
+		    printf("\n\nEdit Rute : EDIT_");
+		    scanf("%[^\n]s",kodeKota);
+		    
+		    pf= fopen("kota.txt","r");
+		    prute = fopen("rute.txt","r");
+		    prute1 = fopen("temp3.txt","w");
+		    	while(fread(&r1,sizeof(rute),1,prute)){
+		        	if(strcmp(r1.kode,kodeKota)==0){
+		       			found = 1;
+				    	fflush(stdin);
+			            printf("\nKeberangkatan : ");
+					    scanf("%[^\n]s",r1.keberangkatan);
+					    fflush(stdin);
+					    printf("Tujuan : ");
+					    scanf("%[^\n]s",r1.tujuan);
+					    fflush(stdin);
+					    printf("Bisnis : ");
+					    scanf("%d",&r1.bisnis);
+					    fflush(stdin);
+					    printf("Premium : ");
+					    scanf("%d",&r1.premium);
+						    
+						while(fread(&k1,sizeof(kota),1,pf)) {
+				            if(strcmp(r1.keberangkatan,k1.namaKota)==0) {
+				            	strcpy(r1.kode1,k1.kode);
+							} 
+							if (strcmp(r1.tujuan,k1.namaKota)==0) {
+								strcpy(r1.kode2,k1.kode);
+							}
+							strcpy(kode3,strcat(r1.kode1,"-"));
+							strcpy(r1.kode,(strcat(kode3,r1.kode2)));
+				        }
+					}
+					fwrite(&r1,sizeof(rute),1,prute1); 
+		    }
+		    fclose(pf);
+		    fclose(prute);
+		    fclose(prute1);
+		    
+		    if (found==1) {
+		    	prute = fopen("rute.txt","w");
+		    	prute1 = fopen("temp3.txt","r");
+		    	
+				while(fread(&r1,sizeof(rute),1,prute1)) {
+		            fwrite(&r1,sizeof(rute),1,prute);
+		            
+		        }
+		        fclose(prute);
+			    fclose(prute1);
+				printf("Data berhasil diubah");
+			}	
+			printf("\nMenu Utama [y/t] ? ");
+			again=getch();
+		break;
+		
+		case 4:
+		printf("s");
+		break;
+		
+		case 5:
+		system("cls");
+		menu_admin();
+		system("cls");
+	}
+}while(again == 'y');
+}

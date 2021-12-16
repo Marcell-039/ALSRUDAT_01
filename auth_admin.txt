@@ -1,0 +1,16 @@
+int auth_admin(){
+	system("cls");
+        printf("\n===========================================\n\t\tHalaman Admin\n-------------------------------------------\n");
+        printf("Email : ");
+        scanf("%s", &emailAdmin);
+        printf("Password : ");
+        scanf("%s", &passAdmin);
+        if((strcmp(emailAdmin,"admin")==0) && (strcmp(passAdmin,"admin") == 0)){
+        	system("cls");
+        	menu_admin();	
+		}else{
+			system("cls");
+			printf("email/password Salah!");
+		}
+    	    
+}
