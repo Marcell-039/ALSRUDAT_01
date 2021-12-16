@@ -1,0 +1,8 @@
+Data  Jadwal Kereta Api
+(Kode, Tanggal, Waktu Keberangkatan, Tujuan, KAI, Status)
+
+JW00001,01-11-2021,08.00,Jakarta,Bandung,KAI 01,Sisa 5 Kursi
+JW00002,12-11-2021,09.15,Bogor,Cianjur,KAI 02,Sisa 3 Kursi
+JW00003,03-12-2021,09.00,Cirebon,Garut,KAI 03,Sisa 4 Kursi
+JW00004,05-12-2021,10.00,Indramayu,Purwakarta,KAI 04,Sisa 7 Kursi
+JW00005,07-12-2021,10.15,Sukabumi,Banjar,KAI 05,Sisa 2 Kursi
