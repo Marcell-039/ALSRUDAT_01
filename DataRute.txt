@@ -1,0 +1,8 @@
+Data Rute 
+(No, Keberangkatan, Tujuan, Kode Rute, Bisnis, Premium)
+
+1,Bandung,Jakarta,BDG-JKT,200.000,150.000
+2,Jakarta,Bandung,JKT-BDG,200.000,150.000
+3,Bogor,Cianjur,BGR-CNJ,150.000,100.000
+4,Cianjur,Bogor,CNJ-BGR,150.000,100.000
+5,Cirebon,Garut,CRB-GRT,230.000,200.000
