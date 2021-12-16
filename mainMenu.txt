@@ -1,0 +1,32 @@
+int mainMenu(){
+		printf("\n===========================================\n\t\t Program Sederhana Sistem KAT (KERETA API TOBA)\n -------------------------------------------\n");
+		//membaut menu auth user
+        printf("PILIH ROLE ANDA ..............\n\n");
+        printf("\n1. CUSTOMER");
+        printf("\n2. ADMIN");
+        printf("\n3. LOG-OUT");
+        printf("\n");
+        printf("MASUKKAN PILIHAN ANDA : ");
+        scanf("%d",&pilih1);
+		printf("\n");
+		printf("\n");
+        if(pilih1>3){
+     		system("cls");
+            printf("INPUT SALAH, COBA LAGI!!\n");
+		}switch(pilih1){
+			case 1:
+				{
+				customer();
+				break;	
+			}
+			case 2:
+				{
+					login_admin();
+					break;
+				}
+			case 3:
+				{
+					system("exit");
+				}
+		}
+	}
