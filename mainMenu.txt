@@ -1,6 +1,6 @@
 int mainMenu(){
 		printf("\n===========================================\n\t\t Program Sederhana Sistem KAT (KERETA API TOBA)\n -------------------------------------------\n");
-		//membaut menu auth user
+		//membuat menu auth user
         printf("PILIH ROLE ANDA ..............\n\n");
         printf("\n1. CUSTOMER");
         printf("\n2. ADMIN");
